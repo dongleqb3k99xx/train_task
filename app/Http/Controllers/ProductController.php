@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Repositories\UserRepository;
+use App\Repositories\ProductRepository;
+
 class ProductController extends Controller{
 
-    function showHome() {
-        
-        return view('product/home');
-    }
-    
+	private $productRepository;
+
+	public function __construct(ProductRepository $productRepository) 
+	{
+		$this->productRepository = $productRepository;
+	}
+
+	function showHome() 
+	{
+		$data = $this->productRepository->getAll();
+		return view('product/home', ['data'=> $data]);
+	}
 }

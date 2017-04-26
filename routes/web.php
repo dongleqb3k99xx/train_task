@@ -16,4 +16,8 @@
 //});
 
 
-Route::get('/',['as' => 'public', 'uses' => 'ProductController@showHome']);
+// Route::get('/',['as' => 'public', 'uses' => 'ProductController@showHome']);
+
+Route::get('login', 'LoginController@getLogin')->name('getLogin');
+Route::post('postLogin', ['as'=>'login','uses'=>'LoginController@postLogin']);
+ Route::get('home',['as'=>'public','uses'=>'ProductController@showHome']);

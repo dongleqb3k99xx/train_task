@@ -11,11 +11,17 @@ class ProductController extends Controller{
 	public function __construct(ProductRepository $productRepository) 
 	{
 		$this->productRepository = $productRepository;
+		$this->middleware('auth');
 	}
+	
 
 	function showHome() 
 	{
 		$data = $this->productRepository->getAll();
 		return view('product/home', ['data'=> $data]);
+	}
+	public function showRegister(){
+
+		return view('product/demo');
 	}
 }

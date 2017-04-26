@@ -3,14 +3,14 @@
 namespace App\Services;
 
 use App\Models as Models;
-use App\Models\Product;
-use App\Repositories\ProductRepository;
+use App\Models\ProductType;
+use App\Repositories\ProductTypeRepository;
 
-class ProductService implements ProductRepository {
+class ProductTypeService implements ProductTypeRepository {
 
     private $model;
 
-    public function __construct(Product $model) {
+    public function __construct(ProductType $model) {
         $this->model = $model;
     }
 
@@ -19,7 +19,7 @@ class ProductService implements ProductRepository {
     }
 
     public function getName() {
-        return $this->model->product_name;
+        return $this->model->type_name;
     }
 
     public function getById($id) {

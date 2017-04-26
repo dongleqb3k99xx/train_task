@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/demo_apclone/resources/views/product/home.blade.php</file>
+            <file>file:/C:/xampp/htdocs/demo_apclone/app/Services/ProductService.php</file>
+            <file>file:/C:/xampp/htdocs/demo_apclone/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/demo_apclone/resources/views/product/product_detail.blade.php</file>
+            <file>file:/C:/xampp/htdocs/demo_apclone/app/Models/Product.php</file>
+            <file>file:/C:/xampp/htdocs/demo_apclone/app/Http/Controllers/ProductController.php</file>
+        </group>
+    </open-files>
 </project-private>

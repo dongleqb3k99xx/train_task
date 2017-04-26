@@ -2,6 +2,6 @@
 
 namespace App\Repositories;
 
-interface ProductRepository extends BaseRepository{
+interface ProductTypeRepository extends BaseRepository{
 
-} 
+}

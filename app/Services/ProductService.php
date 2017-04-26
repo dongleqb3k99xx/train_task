@@ -23,7 +23,7 @@ class ProductService implements ProductRepository {
     }
 
     public function getById($id) {
-        return $this->model->find($id);
+        return $this->model->where('product_id', '=', $id)->get();
     }
 
     public function create(array $attribute) {
@@ -38,4 +38,7 @@ class ProductService implements ProductRepository {
         return $this->model->find($id)->delete();
     }
     
+    public function getProductByIdType($id) {
+        return $this->model->where('type_id', '=', $id)->get();
+    }
 }

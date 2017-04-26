@@ -173,11 +173,11 @@
                 url: 'doAddCart?id='+idProduct,
                 async: true,
                 success: function(response){
-                    alert(response);
+                   
                 },
                 error: function(data){
                     console.log(data);
-                    alert("failsss");
+                    
                 },
             });
         }

@@ -22,3 +22,6 @@ Route::get('type',['as' => 'type', 'uses' => 'ProductController@getProductWithId
 Route::get('viewinfo',['as' => 'view-info', 'uses' => 'ProductController@getProductId']);
 
 Route::get('doAddCart',['as' => 'doAddCart', 'uses' => 'ProductController@doAddCart']);
+Route::get('login', 'LoginController@getLogin')->name('getLogin');
+Route::post('postLogin', ['as'=>'login','uses'=>'LoginController@postLogin']);
+ Route::get('home',['as'=>'public','uses'=>'ProductController@showHome']);

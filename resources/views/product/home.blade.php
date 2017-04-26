@@ -54,6 +54,19 @@
                         <a href="#">Contact</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav" style="float:right">
+                    <li>
+                        <a href="#">
+                            @if(Session::has('dataCart'))
+                                {{   count(Session::get('dataCart'))   }}
+                            @else 0
+                            @endif
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            
+                        
+                        </a>
+                    </li>
+                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -111,9 +124,11 @@
                         <div class="thumbnail">
                             <div class = "product-img">
                                 <a href="{{route('view-info', ['id' =>$dataProduct->product_id  ])}}"><img src="http://placehold.it/320x300" alt=""></a>
-                                <div class="p-mask">
-                                    <button onclick="doAddCart({{ $dataProduct->product_id }})" class="btn-info" style="margin-left: 33%;" type="button"  > Add to cart</button>
-                                </div>
+                                <a href="#" onclick="doAddCart({{ $dataProduct->product_id }})">
+                                    <div class="p-mask" style="text-align: center">
+                                        <h4>Add To Cart</h4>
+                                    </div>
+                                </a>
                             </div>
                                 <div class="caption">
                                     <h4><a href="{{route('view-info', ['id' =>$dataProduct->product_id])}}">{{ $dataProduct->product_name }}</a>

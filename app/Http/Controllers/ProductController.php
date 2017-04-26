@@ -16,7 +16,9 @@ class ProductController extends Controller{
 	{
 		$this->productRepository = $productRepository;
                 $this->productTypeRepository = $productTypeRepository;
+                $this->middleware('auth');
 	}
+	
 
 	function showHome() 
 	{
@@ -55,4 +57,9 @@ class ProductController extends Controller{
                 $request->session()->put('dataCart', $arrCart);
             }
         }
+
+        public function showRegister(){
+
+		return view('product/demo');
+	}
 }

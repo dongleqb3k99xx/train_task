@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Repositories\ProductRepository;
 use App\Repositories\ProductTypeRepository;
+use App\ModelViews\ProductViewModel;
 
 class ProductController extends Controller{
 
 	private $productRepository;
         private $productTypeRepository;
+        private $productViewModel;
         
 	public function __construct(ProductRepository $productRepository, ProductTypeRepository $productTypeRepository) 
 	{
@@ -35,13 +37,22 @@ class ProductController extends Controller{
         }
         function doAddCart(Request $request) {
             if ($request->session()->has('dataCart')) {
-                
-                $request->session()->push('dataCart', 'developers');
-                echo 'push ok';
+                $productViewModel = new ProductViewModel();
+                $productViewModel->productId = $request->input( 'id' );
+                $productViewModel->quantity = 1;
+                //Add data for session
+                $request->session()->push('dataCart', $productViewModel);
+                echo count(session('dataCart'));
             }
             else {
-                $request->session()->put('dataCart', 'value');
-                echo 'put ok';
+                //remove all Session :
+                $arrCart = array();
+                $productViewModel = new ProductViewModel();
+                $productViewModel->productId = $request->input( 'id' );
+                $productViewModel->quantity = 1;
+                array_push($arrCart, $productViewModel);
+                //Create new session :
+                $request->session()->put('dataCart', $arrCart);
             }
         }
 }

@@ -57,13 +57,13 @@
                 <ul class="nav navbar-nav" style="float:right">
                     <li>
                         <a href="#">
+                            <span id = 'txtNumberCart'>
                             @if(Session::has('dataCart'))
                                 {{   count(Session::get('dataCart'))   }}
                             @else 0
                             @endif
+                            </span>
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                            
-                        
                         </a>
                     </li>
                 </ul>
@@ -173,7 +173,7 @@
                 url: 'doAddCart?id='+idProduct,
                 async: true,
                 success: function(response){
-                   
+                    document.getElementById('txtNumberCart').innerHTML = response;
                 },
                 error: function(data){
                     console.log(data);

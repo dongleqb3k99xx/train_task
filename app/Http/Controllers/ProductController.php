@@ -42,6 +42,7 @@ class ProductController extends Controller{
             $productViewModel->quantity = 1;
             //Add data for session
             $request->session()->push('dataCart', $productViewModel);
+            echo count(session('dataCart'));
         }
         else {
             //remove all Session :
@@ -52,6 +53,7 @@ class ProductController extends Controller{
             array_push($arrCart, $productViewModel);
             //Create new session :
             $request->session()->put('dataCart', $arrCart);
+            echo count(session('dataCart'));
         }
     }
     public function showRegister(){
